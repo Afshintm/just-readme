@@ -20,5 +20,7 @@ Includes the restful api which has two controllers
 
 #### Build and Run
 
-1. You can open the solution file in the root of the repo in visual studio and build it 
+- You can open the solution file in the root of the repo in visual studio and build it 
+- You can also see swagger index page to test all the endpoints https://localhost:5081/swagger/index.html
+- I have also exported the postman collection in the Docs folder of the root repo
 
