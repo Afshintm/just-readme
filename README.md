@@ -8,6 +8,7 @@ Includes the restful api which has two controllers
 - Basket includs a shopping basket of cars that the user should can create and get the **Discount** for.
 - it included Get, Post, Delete and Get/{id}/discount for getting, creating, deleting and getting the basket discount respectively.
 - Discounts will be calculated based on the rules.
+- for example to add a new basket you should do a Post request to https://localhost:5081/baskets and the body of post request is an array of carIds that you want to include in the basket like [1,2,5] will create a basket with 3 cars with ids 1, 2,and 5. 
 
 ## Implementing the rules
 
