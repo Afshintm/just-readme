@@ -1,5 +1,5 @@
 ## BizCover.Api.Cars
-
+This repository has been developed by Afshin Teymoori
 Includes the restful api which has two controllers 
 ## 1. Cars 
 - Cars controller include Get, Post and Put methods for getting all cars or by id, Insert a new car and Update an existing car respectively. 
