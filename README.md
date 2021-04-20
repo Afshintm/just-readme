@@ -1,57 +1,24 @@
 ## BizCover.Api.Cars
 
-includes the restful api which has two controller 
-1. Cars 
-- Cars controller include Get, Post and Put methods for GetAllCars Add and Update an existing car respectively. 
+Includes the restful api which has two controllers 
+## 1. Cars 
+- Cars controller include Get, Post and Put methods for getting all cars or by id, Insert a new car and Update an existing car respectively. 
 
-3. Baskets
-- Basket includs a shopping basket of cars that yo can create and Discount will be calculated based on the rules.
+## 2. Baskets
+- Basket includs a shopping basket of cars that the user should can create and get the **Discount** for.
 - it included Get, Post, Delete and Get/{id}/discount for getting, creating, deleting and getting the basket discount respectively.
+- Discounts will be calculated based on the rules.
 
-- GetAllCars
-- Add
-- Update
+## Implementing the rules
 
-You will need to write a .Net REST API (using C#.Net) which will be used by the company website to consume this repository.
+1. I have userd Strategy pattern to implement the rules. This way, adding new rules is as easy as implementing **IDiscountStrategy interface** and registering the new class in the startup.cs DI configuration method.
 
-This should be production ready code that can be supported!
+#### Tests
+- I have developed two test projecs, one for Integration tests and the other for Unit/Component tests.
+- Integration tests are in **BizCover.Api.Cars.Integration.Tests** project and each tests will have it own TestContext class and corresponding Api. Effectively, these tests are end-to-end tests.
+- Unit tests are in **BizCover.Api.Cars.Tests** and are more of component tests as opposed to focusing an a single method of a class. In these tests I have Stubbed out the dependecies.
 
-This service should be able to perform the following:
+#### Build and Run
 
-1. Insert new car
-2. Update existing car.
-3. Calculate discount on a list of cars to purchase according to the rules mentioned below.
+1. You can open the solution file in the root of the repo in visual studio and build it 
 
-Discount calculation rule:
-
-1. If total cost exceeds $100,000 apply 5% discount
-2. If number of cars is more than 2, apply 3% discount
-3. If cars year is before 2000, apply 10% discount
-4. The above rules are cumulative (i.e. all of them can be applicable at the same time)
-
-#### NOTES
-
-You can complete the solution either using the .Net Framework or .Net Core. Feel free to upgrade/downgrade to a version you have available. The source folders
-are in either ".Net Core" or ".Net Framework" folders in the zip file. You can restructure the solution to your liking and use any 3rd party libraries.
-
-Please upload the completed test to https://www.dropbox.com/request/VYQbQMXUuXUy2eISGVjB (dont need to include .net dependencies/packages) and follow these guidelines:
-
-- Delete either ".Net Framework" or ".Net Core" folder, whichever one you havent used.
-- If you want to add readme or other files please do so within ".Net Framework" or ".Net Core" folder, whichever you've chosen.
-- Zip your submission (No rar or 7z)
-
-Please DO NOT UPLOAD YOUR CODE to a public site like github, gitlab or bitbucket for instance.
-
-We can't provide any more information, so please make the relevant assumptions.
-If you like, you can include documentation/readme on these assumptions.
-
-#### HINTS
-
-1. Follow the brief and the requirements!
-
-2. You should use this opportunity to demonstrate that you have the technical knowledge to be successful in a senior engineer.
-   Remember that a senior engineer will be a person who is not just an "order taker" that does the work, but is someone who can provide input to design decisions, follow best practices, perform peer reviews, and mentoring other developers.
-
-3. If theres common code/scenarios that you have written then you dont need to do this everywhere. Its ok to leave a note for us so that given more time
-   you would complete it. We just want to see how you've written it and what your approach is. For instance, if you were writing unit tests then if you cover
-   one get scenario you can describe what you would do in other get scenarios if that was applicable.
